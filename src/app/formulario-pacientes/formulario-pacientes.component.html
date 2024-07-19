@@ -1,0 +1,77 @@
+<div class="container">
+  <h2>Formulario de Usuario</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <!-- <div>
+      <label for="id">ID:</label>
+      <input id="id" formControlName="id" type="number" />
+      <div *ngIf="userForm.get('id')?.invalid && userForm.get('id')?.touched">
+        <small *ngIf="userForm.get('id')?.errors?.required">El ID es obligatorio.</small>
+        <small *ngIf="userForm.get('id')?.errors?.pattern">El ID debe ser un número.</small>
+      </div>
+    </div> -->
+
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text" />
+      <div *ngIf="userForm.get('nombre')?.invalid && userForm.get('nombre')?.touched">
+        <small *ngIf="userForm.get('nombre')?.errors?.required">El nombre es obligatorio.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="edad">Edad:</label>
+      <input id="edad" formControlName="edad" type="number" />
+      <div *ngIf="userForm.get('edad')?.invalid && userForm.get('edad')?.touched">
+        <small *ngIf="userForm.get('edad')?.errors?.required">La edad es obligatoria.</small>
+        <small *ngIf="userForm.get('edad')?.errors?.min">La edad debe ser mayor que 0.</small>
+        <small *ngIf="userForm.get('edad')?.errors?.max">La edad debe ser menor que 120.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="direccion">Dirección:</label>
+      <input id="direccion" formControlName="direccion" type="text" />
+      <div *ngIf="userForm.get('direccion')?.invalid && userForm.get('direccion')?.touched">
+        <small *ngIf="userForm.get('direccion')?.errors?.required">La dirección es obligatoria.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="genero">Género:</label>
+      <select id="genero" formControlName="genero">
+        <option value="">Selecciona...</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+      <div *ngIf="userForm.get('genero')?.invalid && userForm.get('genero')?.touched">
+        <small *ngIf="userForm.get('genero')?.errors?.required">El género es obligatorio.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" />
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        <small *ngIf="userForm.get('email')?.errors?.required">El email es obligatorio.</small>
+        <small *ngIf="userForm.get('email')?.errors?.email">El email no es válido.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" formControlName="telefono" type="text" />
+      <div *ngIf="userForm.get('telefono')?.invalid && userForm.get('telefono')?.touched">
+        <small *ngIf="userForm.get('telefono')?.errors?.required">El teléfono es obligatorio.</small>
+        <small *ngIf="userForm.get('telefono')?.errors?.pattern">El teléfono debe ser un número.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="observaciones">Observaciones:</label>
+      <textarea id="observaciones" formControlName="observaciones"></textarea>
+    </div>
+
+    <button type="submit" [disabled]="userForm.invalid">Enviar</button>
+  </form>
+</div>
