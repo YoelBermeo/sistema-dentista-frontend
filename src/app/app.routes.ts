@@ -7,4 +7,6 @@ export const routes: Routes = [
   { path: '', title: 'Home', component: HomeComponent },
   { path: 'pacientes', title: 'Pagina pacientes', component: PacientesComponent },
   { path: 'form-pacientes', title: 'Formulario de pacientes', component: FormularioPacientesComponent },
+  { path: 'form-pacientes/:id', title: 'Formulario de pacientes', component: FormularioPacientesComponent },
+  { path: '**', redirectTo: '' }
 ];

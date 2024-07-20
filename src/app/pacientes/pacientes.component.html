@@ -1,1 +1,31 @@
-<p>pacientes works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Dirección</th>
+      <th>Género</th>
+      <th>Email</th>
+      <th>Teléfono</th>
+      <th>Observaciones</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let paciente of pacientes">
+      <td>{{ paciente.id }}</td>
+      <td>{{ paciente.nombre }}</td>
+      <td>{{ paciente.edad }}</td>
+      <td>{{ paciente.direccion }}</td>
+      <td>{{ paciente.genero }}</td>
+      <td>{{ paciente.email }}</td>
+      <td>{{ paciente.telefono }}</td>
+      <td>{{ paciente.observaciones }}</td>
+      <td>
+        <button (click)="actualizarPaciente(paciente)">Editar</button>
+        <button (click)="eliminarPaciente(paciente.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

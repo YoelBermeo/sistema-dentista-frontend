@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Formulario de Usuario</h2>
+  <h2>Formulario de Paciente</h2>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <!-- <div>
       <label for="id">ID:</label>
@@ -72,6 +72,6 @@
       <textarea id="observaciones" formControlName="observaciones"></textarea>
     </div>
 
-    <button type="submit" [disabled]="userForm.invalid">Enviar</button>
+    <button type="submit" [disabled]="userForm.invalid">{{ isUpdating ? 'Actualizar' : 'Enviar' }}</button>
   </form>
 </div>
