@@ -12,12 +12,6 @@ export interface RespuestaPaciente {
   error?: string;
 }
 
-export interface RespuestaEliminacion {
-  //para cuando se crea el paciente
-  ok: boolean;
-  error?: string;
-}
-
 export interface Paciente {
   id: number;
   nombre: string;

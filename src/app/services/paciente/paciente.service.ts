@@ -34,8 +34,9 @@ export class PacienteService {
   actualizarPaciente(
     id: number,
     paciente: Paciente
-  ): Observable<RespuestaPacientes> {
-    return this.http.put<RespuestaPacientes>(
+  ): Observable<RespuestaPaciente> {
+
+    return this.http.put<RespuestaPaciente>(
       this.apiUrl + `/actualizar-paciente/${id}`,
       paciente
     );

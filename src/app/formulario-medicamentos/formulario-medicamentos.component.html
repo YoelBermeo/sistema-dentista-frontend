@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>{{ isUpdating ? 'Actualizar Medicamento' : 'Nuevo Medicamento' }}</h2>
+  <form [formGroup]="medForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text" />
+      <div *ngIf="medForm.get('nombre')?.invalid && medForm.get('nombre')?.touched">
+        <small *ngIf="medForm.get('nombre')?.errors?.required">El nombre es obligatorio.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <input id="descripcion" formControlName="descripcion" type="text" />
+      <div *ngIf="medForm.get('descripcion')?.invalid && medForm.get('descripcion')?.touched">
+        <small *ngIf="medForm.get('descripcion')?.errors?.required">La descripcion es obligatoria.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="indicaciones">Indicaciones:</label>
+      <textarea id="indicaciones" formControlName="indicaciones"></textarea>
+    </div>
+
+    <div>
+      <label for="contradicciones">Contradicciones:</label>
+      <textarea id="contradicciones" formControlName="contradicciones"></textarea>
+    </div>
+
+    <div>
+      <label for="dosis">Dosis:</label>
+      <input id="dosis" formControlName="dosis" type="text" />
+    </div>
+
+    <button type="submit" [disabled]="medForm.invalid">
+      {{ isUpdating ? 'Actualizar' : 'Enviar' }}
+    </button>
+  </form>
+</div>

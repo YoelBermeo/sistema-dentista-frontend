@@ -1,1 +1,27 @@
-<p>medicamentos works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Indicaciones</th>
+      <th>Contradicciones</th>
+      <th>Dosis</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let medicamento of medicamentos">
+      <td>{{ medicamento.id }}</td>
+      <td>{{ medicamento.nombre }}</td>
+      <td>{{ medicamento.descripcion }}</td>
+      <td>{{ medicamento.indicaciones }}</td>
+      <td>{{ medicamento.contradicciones }}</td>
+      <td>{{ medicamento.dosis }}</td>
+      <td>
+        <button (click)="actualizarMedicamento(medicamento)">Editar</button>
+        <button (click)="eliminarMedicamento(medicamento.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

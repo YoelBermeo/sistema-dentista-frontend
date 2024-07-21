@@ -1,15 +1,6 @@
 <div class="container">
-  <h2>Formulario de Paciente</h2>
+  <h2>{{ isUpdating ? 'Actualizar Paciente' : 'Nuevo Paciente' }}</h2>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <!-- <div>
-      <label for="id">ID:</label>
-      <input id="id" formControlName="id" type="number" />
-      <div *ngIf="userForm.get('id')?.invalid && userForm.get('id')?.touched">
-        <small *ngIf="userForm.get('id')?.errors?.required">El ID es obligatorio.</small>
-        <small *ngIf="userForm.get('id')?.errors?.pattern">El ID debe ser un número.</small>
-      </div>
-    </div> -->
-
     <div>
       <label for="nombre">Nombre:</label>
       <input id="nombre" formControlName="nombre" type="text" />
