@@ -1,1 +1,63 @@
-<p>form-dosis works!</p>
+<form [formGroup]="dosageForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="age">Edad:</label>
+    <input id="age" formControlName="age" type="number" min="1" max="125">
+    <div *ngIf="dosageForm.controls['age'].touched && hasError('age', 'required')">
+      La edad es obligatoria.
+    </div>
+    <div *ngIf="dosageForm.controls['age'].touched && hasError('age', 'min')">
+      La edad debe ser al menos 1.
+    </div>
+    <div *ngIf="dosageForm.controls['age'].touched && hasError('age', 'max')">
+      La edad no puede ser mayor que 125.
+    </div>
+  </div>
+
+  <div>
+    <label for="dose">Dosis:</label>
+    <input id="dose" formControlName="dose" type="number" min="0">
+    <select formControlName="doseUnit">
+      <option *ngFor="let unit of units" [value]="unit">{{ unit }}</option>
+    </select>
+    <div *ngIf="dosageForm.controls['dose'].touched && hasError('dose', 'required')">
+      La dosis es obligatoria.
+    </div>
+    <div *ngIf="dosageForm.controls['dose'].touched && hasError('dose', 'min')">
+      La dosis debe ser al menos 0.
+    </div>
+  </div>
+
+  <div>
+    <label for="weight">Peso (kg):</label>
+    <input id="weight" formControlName="weight" type="number" min="0">
+    <div *ngIf="dosageForm.controls['weight'].touched && hasError('weight', 'required')">
+      El peso es obligatorio.
+    </div>
+    <div *ngIf="dosageForm.controls['weight'].touched && hasError('weight', 'min')">
+      El peso debe ser al menos 0.
+    </div>
+  </div>
+
+  <div>
+    <label for="quantity">Volumen de administración:</label>
+    <input id="quantity" formControlName="quantity" type="number">
+    <select formControlName="quantityUnit">
+      <option *ngFor="let unit of units" [value]="unit">{{ unit }}</option>
+    </select>
+    <div *ngIf="dosageForm.controls['quantity'].touched && hasError('quantity', 'required')">
+      El volumen de administración es obligatorio.
+    </div>
+  </div>
+
+  <div>
+    <label for="doseMed">Dosis medicamento:</label>
+    <input id="doseMed" formControlName="doseMed" type="number">
+    <div *ngIf="dosageForm.controls['doseMed'].touched && hasError('doseMed', 'required')">
+      La dosis del medicamento es obligatoria.
+    </div>
+  </div>
+
+  <button type="submit">Enviar</button>
+
+  <p *ngIf="finalResult !== null">El resultado es: {{ finalResult }} (mg) por día</p>
+</form>
