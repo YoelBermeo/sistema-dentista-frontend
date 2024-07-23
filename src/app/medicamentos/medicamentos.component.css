@@ -1,0 +1,55 @@
+table, th, td {
+  border-collapse: collapse;
+}
+
+.tabla {
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.head {
+  background-color: #3598dc;
+  color: #fff;
+  font-weight: 500;
+}
+
+.head th {
+  border: 1px solid #289be8;
+  padding: 0.7rem 3rem ;
+}
+
+.body td {
+  padding: 0.7rem 3rem;
+  border-right: 1px solid #dddddd;
+}
+
+.body tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.body tr {
+  border: 1px solid #dddddd;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.action-buttons button {
+  all: unset;
+  padding: 0.5rem 0.5rem;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.action-buttons .btn-editar {
+  background-color: #2da542;
+  color: #FFF;
+}
+
+.action-buttons .btn-eliminar {
+  background-color: #b9555d;
+  color: #FFF;
+}

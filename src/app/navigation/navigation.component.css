@@ -1,25 +1,28 @@
-nav {
+.nav {
   background-color: #333;
-  padding: 1em;
+  padding: 0.5rem 0.5rem;
 }
 
-ul {
+.nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
-li {
-  margin-right: 1em;
-}
+/* .nav li { */
+  /* padding: 0.7rem .9rem */
+/* } */
 
-a {
+.nav a {
+  display: inline-block;
   color: white;
   text-decoration: none;
+  padding: 0.7rem .9rem
 }
 
-a:hover {
-  text-decoration: underline;
+.nav li:hover {
+  background-color: #505050;
   cursor: pointer;
 }

@@ -1,5 +1,5 @@
-<table>
-  <thead>
+<table class="tabla">
+  <thead class="head">
     <tr>
       <th>ID</th>
       <th>Nombre</th>
@@ -12,7 +12,7 @@
       <th>Acciones</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="body">
     <tr *ngFor="let paciente of pacientes">
       <td>{{ paciente.id }}</td>
       <td>{{ paciente.nombre }}</td>
@@ -22,9 +22,9 @@
       <td>{{ paciente.email }}</td>
       <td>{{ paciente.telefono }}</td>
       <td>{{ paciente.observaciones }}</td>
-      <td>
-        <button (click)="actualizarPaciente(paciente)">Editar</button>
-        <button (click)="eliminarPaciente(paciente.id)">Eliminar</button>
+      <td class="action-buttons">
+        <button class="btn-editar" (click)="actualizarPaciente(paciente)">Editar</button>
+        <button class="btn-eliminar" (click)="eliminarPaciente(paciente.id)">Eliminar</button>
       </td>
     </tr>
   </tbody>
